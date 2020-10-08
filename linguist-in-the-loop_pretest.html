@@ -1,0 +1,236 @@
+
+
+<style type="text/css">
+label, input[type=radio], input[type=button] { cursor: pointer; }
+.blue { color: blue; }
+.red { color: red; }
+.trial { padding: 15px 10px; }
+.trial p, .trial table { padding-left: 20px; margin: 3px; }
+.trial table { width: 400px; }
+.trial tr td { width: 14%; text-align: center; }
+.trial_number { font-size:1.2em; font-weight: bold; }
+.tab { margin-left: 40px; }
+#unanswered { font-weight: bold; font-size: 2em; color: black; background-color: red; margin: 0 auto; width: 500px; border: black 1px solid; padding: 10px; display:none; }
+#answered { margin: 0 auto; width: 500px; border: black 1px solid; padding: 10px; display:none; }
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.active, .collapsible:hover {
+  background-color: #555;
+}
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+</style>
+
+<h2>Instructions:</h2>
+
+<p>This task will involve reading a line from an unfamiliar text and writing three sentences that relate to it. 
+Using only this text and what you know about the world:</p>
+
+<ul>
+	<li>Write one sentence that is deﬁnitely correct about the situation or event in the line.</li>
+	<li>Write one sentence that might be correct about the situation or event in the line.</li>
+	<li>Write one sentence that is deﬁnitely incorrect about the situation or event in the line.</li>
+</ul>
+
+<button class="collapsible">Example</button>
+<div class="content">
+  <p>
+	<span class="trial_number">Text:</span>
+	Dave Hanson, to whom nothing was impossible.' Well, we have a nearly impossible task: a task of engineering and building.</p>
+	<ul>
+		<li>Deﬁnitely correct statement: This building job will be very difficult to complete.</li>
+		<li>Maybe correct statement: Dave Hanson worked with an especially large engineering team.</li>
+		<li>Definitely incorrect statement: No one will be able to complete this building job.</li>
+	</ul>
+</div>
+<br>
+
+<hr noshade="noshade" />
+
+<h2> Part 1</h2>
+
+<p><span class="trial_number">Text:</span>
+	
+	Now, as children tend their gardens, they have a new ap-
+preciation of their relationship to the land, their cultural
+heritage, and their community.</p>
+
+<div class="trial count">
+    <p><label for="entailment_1"><span class="trial_number">Definitely true statement:</span></label> 
+        <span class="score count"><input type="text" id="entailment_1" name="entailment_1" size="100" /></span>
+	</p>
+</div>
+<div class="trial count">
+    <p><label for="neutral_1"><span class="trial_number">Maybe true statement:</span></label> 
+        <span class="score count"><input type="text" id="neutral_1" name="neutral_1" size="100" /></span>
+	</p>
+</div>
+<div class="trial count">
+    <p><label for="contradiction_1"><span class="trial_number">Definitely false statement:</span></label> 
+        <span class="score count"><input type="text" id="contradiction_1" name="contradiction_1" size="100" /></span>
+    </p>
+</div>
+
+<hr noshade="noshade" />
+<h2>Part 2 (instructions change)</h2>
+
+<p><span class="trial_number">Updated instructions:</span> Now provide a statement that is definitely true, but you must make sure your statements contains a conjunction word: ‘and’, ‘but’, or ‘or’.</p>
+
+<button class="collapsible">Example</button>
+<div class="content">
+  <p>
+	<span class="trial_number">Text:</span>
+	Dave Hanson, to whom nothing was impossible.' Well, we have a nearly impossible task: a task of engineering and building.</p>
+	<ul>
+		<li>Deﬁnitely correct statement: This building job will be very difficult to complete, but someone is willing to try.</li>
+	</ul>
+</div>
+
+<p><span class="trial_number">Text (same as above):</span>
+	
+	Now, as children tend their gardens, they have a new ap-
+preciation of their relationship to the land, their cultural
+heritage, and their community.</p>
+
+<div class="trial count">
+    <p><label for="entailment_2"><span class="trial_number">Definitely true statement:</span></label> 
+        <span class="score count"><input type="text" id="entailment_2" name="entailment_2" size="100" /></span>
+    </p>
+</div>
+
+<hr noshade="noshade" />
+<h2>Part 3 (instructions change)</h2>
+
+<p><span class="trial_number">Updated instructions:</span>Now provide a statement that might be true, but your statements must not contain any words repeated from the context (it’s okay to repeat words like ‘the’ and ‘that’, but you must avoid repeating words like ‘impossible’ and ‘building’).</p>
+
+<button class="collapsible">Example</button>
+<div class="content">
+  <p>
+	<span class="trial_number">Text (same as above):</span>
+	Dave Hanson, to whom nothing was impossible.' Well, we have a nearly impossible task: a task of engineering and building.</p>
+	<ul>
+		<li>Maybe correct statement: The man worked with an especially large construction team.</li>
+	</ul>
+</div>
+
+<p><span class="trial_number">Text:</span>
+	
+	Now, as children tend their gardens, they have a new ap-
+preciation of their relationship to the land, their cultural
+heritage, and their community.</p>
+
+<div class="trial count">
+
+    <p><span class="trial_number">Maybe true statement:</span>
+        <span class="score count"><input type="text" id="neutral_2" name="neutral_2" size="100" /></span>
+    </p>
+</div>
+
+<hr noshade="noshade" />
+
+<div class="trial count">
+
+	<span class="trial_number">Future HITs:</span>
+	
+	<p>This task is being used as a pre-test for entry into a selective group of workers for an ongoing data collection effort. 
+		Would you like your responses to be considered for a series of future, well-paid HITs over the coming months?</p>
+	
+	<p><label for='Choice_no_contact'><input type='radio' name='Contact' id='Contact_no' value='No_contact'></input> No, I do not want to be contacted after this HIT.</label></p>
+	<p><label for='Choice_yes_contact'><input type='radio' name='Contact' id='Contact_yes' value='Yes_contact'></input>  Yes, please contact me to participate in more HITs like this one.</label></p>
+
+</div>
+
+<div>
+	<p>Do you have any comments for us about this HIT? (optional)</p>
+	<input type="text" id="comments" name="comments" size="100" /></span>
+</div>
+
+<br />
+
+<div id="unanswered">
+	<span>&nbsp;</span> questions (out of 5 total) have been answered. If you submit now, you will not be paid.<br />
+	<input type="button" value="HIGHLIGHT UNANSWERED QUESTIONS" id="highlight-button" />
+</div>
+
+<div id="answered">
+	<span>&nbsp;</span> questions (out of 5 total) have been answered. You are ready to submit.
+</div>
+
+<p><input type="hidden" name="numanswered" id="numanswered" /> <input type="hidden" name="useragent" id="useragent" /></p>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type='text/javascript'>
+	// counter code:
+	total_number = parseInt("5") || Infinity;
+	
+	function answered() {
+		var value = $(this).val();
+		return value.length;
+	}
+	function count() {
+		if ($(this).is('input') && $(this).is(answered))
+			$(this).closest('.trial').css('background','transparent');
+	
+		var num = $('.count input[type="text"]').filter(answered).length;
+	
+		$('#unanswered span, #answered span').text(num);
+		$('#numanswered').val(num);
+	
+		if ( num < total_number ) {
+			$('#unanswered').show();
+			$('#answered').hide();
+		} else {
+			$('#unanswered').hide();
+			$('#answered').show();
+		}
+	}
+	$(count);
+	$('input').bind('change', count);
+	
+	$(function() {
+		$('#useragent').val(navigator.userAgent);
+	});
+	
+	function highlight() {
+		$('.trial.count').each(function() {
+			if (!$(this).find('input').is(answered))
+				$(this).css('background', 'yellow');
+			else
+				$(this).css('background', 'transparent');			
+		});
+	}
+	$('#highlight-button').click(highlight);
+	</script>
+
+<script>
+	var coll = document.getElementsByClassName("collapsible");
+	var i;
+	
+	for (i = 0; i < coll.length; i++) {
+	  coll[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+		var content = this.nextElementSibling;
+		if (content.style.maxHeight){
+		  content.style.maxHeight = null;
+		} else {
+		  content.style.maxHeight = content.scrollHeight + "px";
+		} 
+	  });
+	}
+</script>
